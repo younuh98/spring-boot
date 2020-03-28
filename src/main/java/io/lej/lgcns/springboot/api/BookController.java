@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping(value = "/books")
+@RequestMapping("/books")
 public class BookController {
 
 	@Autowired
 	BookServie bookService; 
 	
-	@GetMapping("/{bookId}")
-	public ResponseEntity<Book> findById(@PathVariable Long bookId) {
+	@RequestMapping(value = "/{bookId}")
+	public ResponseEntity findById(@PathVariable Long bookId) {
 		Book book = bookService.findById(bookId)
 				.orElseThrow(()-> new RuntimeException("Not found : "));
 		
