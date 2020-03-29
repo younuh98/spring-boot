@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/books")
-//@RequestMapping(value = "/{bookId}")
+//@RequestMapping("/books")
+@RequestMapping(value = "/{bookId}")
 public class BookController {
 
 	@Autowired
