@@ -22,6 +22,10 @@ public class BookController {
 	
 	@GetMapping("/{bookId}")
 	public ResponseEntity<Book> findById(@PathVariable Long bookId) {
+		
+		System.out.println("what!!!!");
+		System.out.println("bookId="+bookId);
+		
 		Book book = bookService.findById(bookId)
 				.orElseThrow(()-> new RuntimeException("Not found : "));
 		
